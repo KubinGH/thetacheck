@@ -213,5 +213,6 @@ if __name__ == "__main__":
         directory = "tests"
     if not shuffle and not do_sort and not natural_sort:
         natural_sort = True
-    app, directory = os.path.normpath(app), os.path.normpath(directory) if directory else os.path.realpath(one_file)
+    # app = os.path.abspath(app)
+    directory = os.path.normpath(directory) if directory else os.path.realpath(one_file)
     main(app, directory, checker, verbose, extra_verbose, result_dist, one_file, limit, shuffle, do_sort, natural_sort, empty_means_any, timer)
